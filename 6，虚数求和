@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main()
+{
+    float Xa,Xb,Ya,Yb,Za,Zb;
+    scanf("%f%f",&Xa,&Xb);	
+	scanf("%f%f",&Ya,&Yb);
+	Za=Xa+Ya;
+	Zb=Xb+Yb;
+	printf("%.2f %.2fi\n",Za,Zb);
+	return 0;
+}

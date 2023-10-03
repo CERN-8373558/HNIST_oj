@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main()
+{
+    float Xa,Ya,Xb,Yb,k;
+    scanf("%f%f",&Xa,&Ya);
+	scanf("%f%f",&Xb,&Yb);
+	k=(Ya-Yb)/(Xa-Xb);
+	printf("%.2f",k);
+	return 0;
+}

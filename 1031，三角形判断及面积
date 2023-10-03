@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+  float a,b,c;
+  scanf("%f%f%f",&a,&b,&c);
+  int cern=a*a+b*b;int lhc=c*c;
+  float p=(a+b+c)/2;float s;
+  s=sqrt(p*(p-a)*(p-b)*(p-c));
+  if(a+b<=c||a+c<=b||b+c<=a){printf("ERROR");}
+  else if(cern==lhc){printf("直角三角形\n%.2f",s);}
+  else if(cern>lhc){printf("锐角三角形\n%.2f",s);}
+  else if(cern<lhc){printf("钝角三角形\n%.2f",s);}
+  return 0;
+}

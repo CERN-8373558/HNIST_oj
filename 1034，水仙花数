@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main()
+{
+  int CERN;
+  scanf("%d",&CERN);
+  int LHC=CERN/10;
+  int A,B,C;
+  A=CERN/100;
+  B=(CERN-A*100)/10;
+  C=(CERN-A*100-B*10);
+  if(LHC<10||LHC>=100){printf("ERROR");}
+  else {if(A*A*A + B*B*B + C*C*C ==CERN ){printf("yes");} else {printf("no");}}
+  return 0;
+}

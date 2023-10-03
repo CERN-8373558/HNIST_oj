@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main()
+{
+	float a, b, c;
+	scanf("%f %f %f", &a, &b, &c);
+	float A, B, C;
+	A = a * 0.2; B = b * 0.3; C = c * 0.5;
+	float sum;
+	sum = A + B + C;
+	printf("%.1f\n", sum);
+	return 0;
+}

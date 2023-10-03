@@ -1,0 +1,9 @@
+#include <stdio.h>
+int main()
+{
+	float A, B, C, D;
+	scanf("%f %f %f", &A, &B, &C);
+	D = (A + B + C) / 3;
+	printf("%.1f", D);
+	return 0;
+}

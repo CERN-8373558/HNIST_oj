@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main()
+{
+int year,leap=0;
+  scanf("%d",&year);
+  int C,D;
+  C=year%4;D=year%100;
+  if(C==0&&D!=0){
+    printf("yes");}
+  else{printf("no");}
+  return 0;
+}

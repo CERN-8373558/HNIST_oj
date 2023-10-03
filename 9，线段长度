@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <math.h>
+int main ()
+{
+  float Xa,Ya,Xb,Yb,length;
+  scanf("%f%f",&Xa,&Ya);
+  scanf("%f%f",&Xb,&Yb);
+  float A=(Ya-Yb);
+  float B=(Xa-Xb);
+  length = sqrt(A*A+B*B);
+  printf("%.2f",length);
+  return 0;
+}

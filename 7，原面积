@@ -1,0 +1,10 @@
+#include <stdio.h>
+  #define cern 3.14
+int main()
+{
+	float r , area;
+	scanf("%f", &r);
+	area = cern* r*r;
+	printf("%.2f\n", area);
+	return 0;
+}

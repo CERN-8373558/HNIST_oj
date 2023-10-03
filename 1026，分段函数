@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main()
+{
+  int x;
+  scanf("%d",&x);
+  int y;
+  if(x<0){y=x*x-1;}
+  else if(0<=x&&x<1){y=x*x;}
+  else if(x>=1){y=x*x+1;}
+  printf("%d",y);
+  return 0;
+}   

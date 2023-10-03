@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+	float A,B,sum;
+	scanf("%f %f",&A,&B);
+	A = fabs(A);B=fabs(B);
+	sum=A+B;
+	printf("%.1f\n",sum);
+	return 0;
+}

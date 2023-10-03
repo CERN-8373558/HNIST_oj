@@ -1,0 +1,9 @@
+#include <stdio.h>
+int main()
+{
+	char A, B, C;
+	scanf("%c %c %c", &A, &B, &C);
+	A = A + 2; B =B+ 2; C = C + 2;
+	printf("%c%c%c", A, B, C);
+	return 0;
+}

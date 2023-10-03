@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main()
+{
+    int a, b, c, d, cern, lhc;
+    a = 50;
+    scanf("%d", &b);
+    c = a - b;
+    d = c % 10;
+    if (d == 0) {
+    cern = c / 10; lhc = 0;
+    printf("%d\n%d", cern, lhc);
+}
+    else
+    {
+        cern = c / 10; lhc = d;
+        printf("%d\n%d", cern, lhc);
+}
+    return 0;
+}

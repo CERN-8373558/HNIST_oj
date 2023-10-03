@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main()
+{
+  float price;
+scanf("%f",&price);
+if(price<200){printf("%.2f",price);}
+  else if(200<=price&&price<500){price=price*0.9;printf("%.2f",price);}
+  else if(500<=price&&price<=1000){price=price*0.8;printf("%2.f",price);}
+  else if(1000<=price){price=price*0.5;printf("%.2f",price);}
+  return 0;
+}
+  

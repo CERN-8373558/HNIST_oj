@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <math.h>
+#define PI 3.14
+int main()
+{
+ float alpha,c1,c2; 
+ scanf("%f",&alpha);
+  c1=sin(alpha*PI/180);
+  c2=cos(alpha*PI/180);
+ printf("%.2f\n",c1);
+ printf("%.2f\n",c2);
+  return 0;
+}

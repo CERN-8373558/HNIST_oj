@@ -1,0 +1,9 @@
+#include <stdio.h>
+int main()
+{
+ int A,B,area;
+ scanf("%d%d",&A,&B);
+ area=A*B;
+ printf("%d",area);
+ return 0;
+}

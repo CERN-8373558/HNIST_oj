@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main()
+{
+  int A;int price;
+  scanf("%d",&A);
+  if(A<=10){price=A*6;printf("%d",price);}
+  else if(10<A&&A<=20){price=60+(A-10)*7;printf("%d",price);}
+  else {printf("%d",130+(A-20)*10);}
+return 0;
+}

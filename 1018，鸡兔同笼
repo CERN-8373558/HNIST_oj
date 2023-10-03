@@ -1,0 +1,10 @@
+#include <stdio.h>
+int main()
+{int m,n;
+ int x,y;
+ scanf("%d%d",&m,&n);
+ y = (n- 2*m)/2;
+ x = m - y;
+  printf("%d %d",x,y);
+ return 0;
+}

@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main()
+{
+   int k;
+  scanf("%d",&k);
+  if(k>0){
+  printf("positive\n");}
+  else
+  {if(k<0){printf ("negative\n");}
+  else
+    printf("zero\n");
+  }
+return 0;
+}

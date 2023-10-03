@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main()
+{
+  int a,b;
+  char c;
+  scanf("%d%c%d",&a,&c,&b);
+  switch(c)
+  {
+      case'+':
+              printf("%d\n",a+b);break;
+      case'-':
+              printf("%d\n",a-b);break;
+      case'*':
+              printf("%d\n",a*b);break;
+      case'/':
+      {if(b==0){printf("-1\n");}
+      else {printf("%.1f\n",1.0*a/b);}}break;
+    default:printf("-1");}
+      return 0;
+}

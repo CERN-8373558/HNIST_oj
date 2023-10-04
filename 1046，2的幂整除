@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main()
+{
+   int N;int sum=0;int cern;
+   scanf("%d",&N);
+      cern=N;
+   for(int i=0;i<cern;i++){
+   	if(N%2==0){
+	   sum++;
+	   N/=2;}
+	else {
+	   break;}	   
+}
+   printf("%d",sum);
+  return 0;
+}

@@ -1,0 +1,51 @@
+#include <stdio.h>
+int main()
+{
+	char cern;
+	scanf("%c",&cern);
+	int sum=cern-'A';
+	int ch;
+	int P=0;
+	ch=sum;
+	for(int i=1;i<=sum;i++){int j=i-1;
+	for(int l=0;l<=(sum-ch);l++){
+		printf(" ");
+	}
+		for(j;j<=ch+P;j++){
+			printf("%c",cern-j);
+		}
+		for(int k=0;k<ch;k++){
+			printf("%c",'A'+k);
+		}
+		printf("\n");
+		ch-=1;P+=1;
+	}
+	for(int M=0;M<=sum;M++){
+		printf(" ");
+	}printf("A");
+	return 0;
+	}/*这是我自己写的，输出一模一样没有问题，但是过不了，下面是正确答案*/
+
+
+ #include<stdio.h>
+
+int main()
+{
+	char ch = 0;
+	int i = 0;
+	int j = 0;
+	int num = 0;
+	scanf("%c", &ch);
+	num = ch - 'A';
+	for (i = 0; i <= num; i++)
+	{
+		for (j = 0; j < i; j++)
+			printf(" ");
+		for (j = i; j <= num; j++)
+			printf("%c", ch - j);
+		for (j = 0; j < num - i; j++)
+			printf("%c", 'A' + j);
+		printf("\n");
+	}
+	return 0;
+}

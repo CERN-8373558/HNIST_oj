@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+	int n, m, i;
+	scanf("%d", &n);
+	int* a = (int*)calloc(n, sizeof(int));
+	for (i = 0; i < n; i++)
+		scanf("%d", &a[i]);
+	scanf("%d", &m);
+	for (i = 0; i < m; i++)
+	{
+		int begin, end;
+		scanf("%d%d", &begin, &end);
+		int temp = begin;
+		int sum = 0;
+		while (temp >= begin && temp <= end)
+		{
+			sum += a[temp - 1];
+			temp++;
+		}
+		printf("%.2f\n", sum / (end - begin + 1.0));
+	}
+	return 0;
+}/*这里我跟着书上来，没能成功，只好先把下面大哥的帮运过来了*/

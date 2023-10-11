@@ -1,0 +1,17 @@
+#include <stdio.h>
+int cern(int x)
+{
+	if(x<2){
+		return x;
+	}
+	else{
+	return cern(x-1)+cern(x-2);}
+}
+int main()
+{
+	int N=0;
+	scanf("%d",&N);
+	int n=cern(N);
+	printf("%d",n);
+	return 0;
+}

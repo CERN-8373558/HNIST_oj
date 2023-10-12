@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+  int a,b;
+  scanf("%d %d",&a,&b);
+  int C,S;
+  float O;
+  C=2*(a+b);
+  S=a*b;
+  O=sqrt(a*a+b*b);
+  printf("%d\n%d\n%.2f",C,S,O);
+  return 0;
+}

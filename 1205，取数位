@@ -1,0 +1,17 @@
+#include<stdio.h>
+
+void func(int a)
+{
+	if (a > 9)
+		func(a / 10);
+	printf("%d\n", a % 10);
+}
+
+
+int main()
+{
+	int a = 0;
+	scanf("%d", &a);
+	func(a);
+	return 0;
+}

@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main()
+{
+  int n;
+  scanf("%d",&n);
+  int m,k,p;
+  m=n/3600;
+  k=(n-m*3600)/60;
+  p=n-m*3600-k*60;
+  printf("%d小时%d分%d秒",m,k,p);
+  return 0;
+}

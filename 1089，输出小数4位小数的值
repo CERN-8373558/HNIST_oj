@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main()
+{
+  float x;int c;
+  scanf("%f",&x);
+  c=(int)x;
+  float o;
+  o=x-c;
+  int tit;
+  tit=o*10000;
+  int i=0;
+  int arr[4];
+  for(i=0;i<4;i++){
+    arr[i]=tit%10;
+    tit=tit/10;
+  }
+   for(i=3;i>=0;i--){
+     printf("%d\n",arr[i]);
+   }
+  return 0;
+}

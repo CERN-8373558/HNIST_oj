@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main()
+{
+  int p=12345678;
+  int a[100000];
+  int i=0;
+  for(i=0;i<8;i++){
+    a[i]=p%10;
+    p=p/10;
+  }
+  int o_o,I_I;
+  scanf("%d%d",&o_o,&I_I);
+  int temp;
+  temp=a[o_o-1];
+  a[o_o-1]=a[I_I-1];
+  a[I_I-1]=temp;
+  for(i=7;i>=0;i--){
+    printf("%d",a[i]);}
+  return 0;
+}

@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+  char arr[1000];
+  scanf("%s[^#]",&arr);
+  int i=0;
+  int j=0;
+  int o;
+  o=strlen(arr);
+  for(i=0;i<o;i++){
+  if(arr[i]=='('){
+  for(j=i+1;j<o;j++){
+  if(arr[j]==')'){
+  	arr[j] =NULL;
+	arr[i] =NULL;
+	break;
+        }    
+      }
+    }
+  }
+  if (strchr(arr, '(') == NULL && strchr(arr, ')') == NULL)
+		printf("YES\n");
+	else
+		printf("NO\n");
+	return 0;
+}

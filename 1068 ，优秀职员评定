@@ -1,0 +1,40 @@
+#include <stdio.h>
+int main()
+{
+	int t;
+	scanf("%d",&t);
+	int i=0;
+	int j=0;
+	int arr[t][5];
+	for(i=0;i<t;i++){
+		for(j=0;j<5;j++){
+			scanf("%d",&arr[i][j]);
+		}
+		putchar('\n');
+	}
+	int cern[t]={0};
+	for(i=0;i<t;i++){
+		for(j=0;j<5;j++){
+			cern[i]=cern[i]+arr[i][j];//总分计算 
+		}
+	}
+	int max=cern[0];
+	int sum=0;
+		for(i=0;i<t;i++){          //不合格的 
+		if(cern[i]<85){
+			sum++;
+		}
+	}
+	if(sum==t){
+		printf("%d %s\n",sum,"No");
+	}
+	else if(sum<t){
+	for(i=1;i<t;i++){
+		if(max<cern[i]){        //总分max判断 
+			max=cern[i];
+		}
+		}
+		printf("%d %d",sum,max);}
+		return 0;
+}
+//运行输出和样例一样，但oj显示编译错误

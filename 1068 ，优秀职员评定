@@ -10,9 +10,9 @@ int main()
 		for(j=0;j<5;j++){
 			scanf("%d",&arr[i][j]);
 		}
-		putchar('\n');
 	}
-	int cern[t]={0};
+	int cern[t];
+	for(int i=0;i<t;i++){ cern[i]=0; }
 	for(i=0;i<t;i++){
 		for(j=0;j<5;j++){
 			cern[i]=cern[i]+arr[i][j];//总分计算 
@@ -37,4 +37,3 @@ int main()
 		printf("%d %d",sum,max);}
 		return 0;
 }
-//运行输出和样例一样，但oj显示编译错误

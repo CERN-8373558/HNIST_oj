@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+  int i=0;
+  int cern=0;
+  int N;
+  scanf("%d",&N);
+  for(i=0;i<5;i++){
+    cern=cern+pow(10,4-i)*(N%10);
+    N=N/10;
+  }
+  printf("%d",cern);
+  return 0;
+}

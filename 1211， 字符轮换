@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main()
+{
+  char o_o;
+  scanf("%c\n",&o_o);
+  int N;
+  scanf("%d",&N);
+  char u_u=o_o+N;
+  if(o_o+N<=122){
+    printf("%c",u_u);
+  }
+  else{int i;
+  i=u_u%122-1;
+  printf("%c",'a'+i);}
+  return 0;
+}

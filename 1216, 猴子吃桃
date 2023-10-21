@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main()
+{
+   int n,a;
+  scanf("%d%d",&n,&a);
+  int i=0;
+  int sum=a;
+  for(i=1;i<=n;i++){
+  sum=(a-1)*2;
+  a=sum;
+                   }
+printf("%d",sum);
+  return 0;
+}

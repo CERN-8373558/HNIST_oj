@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+int main()
+{
+  char N;
+  scanf("%c",&N);
+  char cern;
+  if(isupper(N));
+  cern=tolower(N);
+  int lhc=cern-96;
+  printf("%c %d",cern,lhc);
+  return 0;
+}

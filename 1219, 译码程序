@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+  char arr[1000];
+  scanf("%[^.]",&arr);
+  int i=0;
+  int o_O=strlen(arr);
+  for(i=0;i<o_O;i++){
+    if(arr[i]==' '){
+    printf("#");}
+    else if(arr[i]<'z'||arr[i>'a']){
+      printf("%d",arr[i]-96);
+    }
+}
+    return 0;
+}

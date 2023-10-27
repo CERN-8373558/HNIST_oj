@@ -1,0 +1,88 @@
+#include <stdio.h>
+int main()
+{
+  /*void cern(int arr[],int a);*/
+  int n,m;
+  /*int *p;*/
+  scanf("%d%d",&n,&m);
+  int A[n];
+  int B[m];
+  int i=0;
+  int j=0;
+  int z=0;
+  int k=0;
+  int temp=0;
+  int C[100];
+  for(i=0;i<n;i++)
+  {
+    scanf("%d",&A[i]);
+  }
+  for(i=0;i<m;i++)
+  {
+    scanf("%d",&B[i]);
+  }
+  for(i=0;i<n;i++)
+  {
+    for(j=0;j<m;j++)
+    {
+      if(A[i]==B[j])
+      {
+        temp++;
+        C[z]=A[i];
+        z++;
+      }
+    }
+  }
+  for(i=0;i<temp;i++){
+    for(j=i+1;j<temp;j++){
+      if(C[i]==C[j]){
+        for(k=j;k<temp;k++){
+        C[k]=C[k+1];}
+        temp--;
+        j--;
+      }
+    }
+}
+  int D[100];
+  int qq=n+m;
+  for(i=0;i<n;i++)
+  {
+    D[i]=A[i];
+  }
+  for(j=n;j<qq;j++)
+  {
+    D[j]=B[j-n];
+  }
+  for(i=0;i<qq;i++)
+  {
+    for(j=i+1;j<qq;j++)
+    {
+      if(D[i]==D[j])
+      {
+        for(k=j;k<qq;k++)
+        {
+        D[k]=D[k+1];
+        }
+        qq--;
+        j--;
+      }
+    }
+  }
+  /*cern(D,n+m);*/
+  for(i=0;i<qq;i++)
+  {
+    printf("%d ",D[i]);
+  }
+  printf("\n");
+  for(i=0;i<temp;i++)
+  {
+    printf("%d ",C[i]);
+  }
+  return 0;
+}
+/*void cern(int arr[],int a)*/
+/*{
+  int i=0;
+  int j=0;
+  int k=0;*/
+  

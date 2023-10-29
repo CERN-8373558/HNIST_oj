@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <string.h>
+struct cern
+{
+  long num;
+  int score;
+};
+int main()
+{
+  int w;
+  scanf("%d",&w);
+  int N,i,j,k;
+  scanf("%d",&N);
+  struct cern p[N],temp;//输入N个信息
+  for(i=0;i<N;i++)
+  {
+    scanf("%ld",&p[i].num);
+    scanf("%d",&p[i].score);
+  }
+  for(i=0;i<N;i++)
+  {
+    k=i;
+    for(j=i+1;j<N;j++)
+    {
+      if(p[j].score>p[k].score)
+      {
+        k=j;
+      }
+    }
+    temp.num=p[i].num;temp.score=p[i].score;
+    p[i].num=p[k].num;p[i].score=p[k].score;
+    p[k].num=temp.num;p[k].score=temp.score;
+  }//进行排序
+  for(i=0;i<N;i++)
+  {
+    printf("%ld %d\n",p[i].num,p[i].score);
+  }
+  return 0;
+}

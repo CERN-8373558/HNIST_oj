@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main(){
+    for(int i=1;i<=3;i++)
+    {
+        for(int j=1;j<=3-i;j++) //相比前两个多加了for循环
+        {                       //相当于输出了一个左上空格三角形
+           printf(" ");
+        }
+        for(int n=1;n<=i;n++)  
+        {
+           printf("3");
+        }
+        printf("\n");
+    }
+    return 0;
+
+}

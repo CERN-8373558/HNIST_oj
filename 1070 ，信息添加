@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+typedef struct Stu
+{
+	char id[12];
+	char name[20];
+	int score[3];
+}Stu;
+
+int cmp_by_id(const void* e1, const void* e2)
+{
+	return strcmp(((Stu*)(e1))->id, ((Stu*)(e2))->id);
+}
+
+int main()
+{
+	int n = 0;
+	int i = 0;
+	int j = 0;
+	scanf("%d", &n);
+	Stu* s = (Stu*)calloc(n + 1, sizeof(Stu));
+	for (i = 0; i < n + 1; i++)
+		scanf("%s %s %d %d %d", s[i].id, s[i].name, &s[i].score[0], &s[i].score[1], &s[i].score[2]);
+	qsort(s, n + 1, sizeof(Stu), cmp_by_id);
+	for (i = 0; i < n; i++)
+	{
+		for (j = i + 1; j < n + 1; j++)
+		{
+			if (strcmp(s[i].id, s[j].id) == 0)
+			{
+				printf("error\n");
+				return 0;
+			}
+		}
+	}
+	for (i = 0; i < n + 1; i++)
+		printf("%s %s %d %d %d\n", s[i].id, s[i].name, s[i].score[0], s[i].score[1], s[i].score[2]);
+	return 0;
+}

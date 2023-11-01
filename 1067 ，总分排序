@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <string.h>
+struct cern
+{
+	char name[20];
+	char id[20];
+	int score[5];
+	int total;
+};
+int main()
+{
+	int N;
+	int i = 0;
+	int t=0;
+	int k;
+	scanf("%d", &N);
+	struct cern p[10],temp;
+	for (i = 0; i < N; i++)
+	{
+		p[i].total=0;
+		scanf("%s%s",&p[i].name,&p[i].id);
+		int j = 0;
+		for (j = 0; j < 5; j++)
+		{
+			scanf("%d", &p[i].score[j]);
+			p[i].total =p[i].total+p[i].score[j];
+		}
+	}
+	for(i=0;i<N;i++)
+	{
+		k=i;
+		for(t=i+1;t<N;t++)
+		{
+			if(p[t].total>p[k].total)
+			{
+				k=t;
+			}
+		}
+		temp.total=p[i].total;strcpy(temp.name,p[i].name);strcpy(temp.id,p[i].id);
+		p[i].total=p[k].total;strcpy(p[i].name,p[k].name);strcpy(p[i].id,p[k].id);
+		p[k].total=temp.total;strcpy(p[k].name,temp.name);strcpy(p[k].id,temp.id);
+	}
+	for(i=0;i<N;i++)
+	{
+	   printf("%s %s total=%d\n", p[i].name, p[i].id, p[i].total);
+	}
+	return 0;
+}
+	

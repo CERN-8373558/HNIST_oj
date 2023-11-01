@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+ char str[1000] = { 0 };
+ int n;
+ int i=0;
+ scanf("%d\n",&n);
+ for(i=0;i<n;i++)
+ { 
+  while (gets(str) != NULL)
+  {
+   int letter[26] = { 0 };
+   int i = 0;
+   while (str[i] != '\0')
+   {
+    if (str[i] >= 'a' && str[i] <= 'z')//小写
+    {
+     letter[str[i] - 97]++;
+    }
+    else if (str[i] >= 'A' && str[i] <= 'Z')//大写
+    {
+     letter[str[i] - 65]++;
+    }
+    i++;
+   }
+   int k = 0;
+   int maxPosition = k;
+   int max = letter[k];
+   for (int k = 1; k < 26; k++)
+   {
+    if (letter[k] > max)
+    {
+     maxPosition = k;
+     max = letter[k];
+    }
+   }
+   printf("%c %d\n", maxPosition + 97,max);
+  }
+ }
+ return 0;
+}

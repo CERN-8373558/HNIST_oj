@@ -1,0 +1,26 @@
+#include <stdio.h>
+//虚岁＝今年-出生年+1     Rat, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Ram, Monkey, Rooster, Dog and Pig
+int main()
+{
+  int y;
+  scanf("%d",&y);
+  int year;
+  year=2017+1-y;
+  int t;
+  t=year%12-3;
+  switch(t)
+  {
+    case 1:printf("Rat");break;
+    case 2:printf("Ox");break;
+    case 3:printf("Tiger");break;
+    case 4:printf("Rabbit");break;
+    case 5:printf("Dragon");break;
+    case 6:printf("Snake");break;
+    case 7:printf("Horse");break;
+    case 8:printf("Ram");break;
+    case 9:printf("Monkey");break;
+    case 10:printf("Rooster");break;
+    case 11:printf("Dog");break;
+    case 12:printf("Pig");break;
+  }
+}

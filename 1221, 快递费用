@@ -1,0 +1,49 @@
+#include <stdio.h>
+int main()
+{
+  int w,no;
+  scanf("%d %d",&w,&no);
+  if(w<=500)
+  {
+    printf("20");
+  }
+  else
+  {
+    int count;
+    int mo;
+    int t;
+    int sum=0;
+    count=w-500;
+    mo=count/500;
+    t=count%500;
+    if(t!=0)
+    {
+      mo+=2;
+    }
+   if(no==1)
+   {
+     sum=20+mo*4;
+     printf("%d",sum);
+   }
+   else if(no=2)
+   {
+     sum=20+mo*6;
+     printf("%d",sum);
+   }
+   else if(no=3)
+   {
+     sum=20+mo*9;
+     printf("%d",sum);
+   }
+   else if(no=4)
+   {
+     sum=20+mo*10;
+     printf("%d",sum);
+   }
+   else if(no=5)
+   {
+     sum=20+mo*17;
+     printf("%d",sum);
+   }
+  }
+  return 0;

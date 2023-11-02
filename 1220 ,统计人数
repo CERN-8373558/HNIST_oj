@@ -1,0 +1,45 @@
+#include <stdio.h>
+struct oi
+{
+  int cla;
+  int score;
+};
+int main()
+{
+  int M;
+  int K,N;
+  scanf("%d %d %d",&M,&K,&N);
+  int i=0;
+  int j=0;
+  int sum=0;
+  int k;
+  struct oi p[1000],temp;
+  for(i=0;i<M-1;i++)
+  {
+    scanf("%d ",&p[i].cla);
+    scanf("%d\n",&p[i].score);
+  }
+  for(i=0;i<M-1;i++)
+  {
+    k=i;
+    for(j=0;j<M-i-1;j++)
+    {
+      if(p[j].score>p[k].score)
+      {
+        k=j;
+      }
+    }
+    temp.cla=p[i].cla;temp.score=p[i].score;
+    p[i].cla=p[k].cla;p[i].score=p[k].score;
+    p[k].cla=temp.cla;p[k].score=temp.score;
+  }
+  for(i=0;i<N;i++)
+  {
+  	if(p[i].cla==K)
+  	{
+  		sum++;
+    }
+  }
+  printf("%d",sum);
+  return 0;
+}

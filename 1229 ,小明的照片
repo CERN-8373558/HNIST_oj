@@ -1,0 +1,10 @@
+#include <stdio.h>
+int main()
+{
+  int n,x,y,z;
+  scanf("%d %d %d %d",&n,&x,&y,&z);
+  int t;
+  t=n-x-y-z;
+  printf("%d",t);
+  return 0;
+}

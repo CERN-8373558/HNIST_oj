@@ -1,0 +1,84 @@
+#include <stdio.h>
+#include <string.h>
+struct cern
+{
+  char name[20];
+  int year;
+};
+int main()
+{
+  int n;
+  int t=0;
+  int i=0;
+  int j=0;
+  int k;
+  scanf("%d",&n);
+  struct cern p[n],temp;
+  for(i=0;i<n;i++)
+  {
+    scanf("%s ",&p[i].name);
+	scanf("%d",&p[i].year); 
+  }
+  for(i=0;i<n-1;i++)
+  {
+  	k=i;
+  	for(j=i+1;j<n;j++)
+  	{
+  		if(p[j].year>p[k].year)
+  		{
+  			k=j;
+	    }
+	}
+	      strcpy(temp.name,p[i].name);temp.year=p[i].year;
+	      strcpy(p[i].name,p[k].name);p[i].year=p[k].year;
+	      strcpy(p[k].name,temp.name);p[k].year=temp.year;
+  }
+  for(i=0;i<n;i++)
+  {
+    for(j=i+1;j<n;j++)
+    {
+      if(p[i].year==p[j].year)
+      {
+        return 0;
+      }
+    }
+  }
+        for(t=n-1;t>=0;t--)
+        {
+  	        printf("%d %s\n",p[t].year,p[t].name);
+        }
+  return 0;
+}
+//以下是c++解法
+#include <algorithm>
+#include <iostream>
+#include <cstring>
+#include <cstdio>
+using namespace std;
+
+struct NBA{
+    string name;
+    int year;
+}a[51];
+
+int n;
+
+bool cmp(NBA x,NBA y){
+    return x.year<y.year;
+}
+
+int main(void){
+    scanf("%d\n",&n);
+    for(int i=1;i<=n;++i){
+        getline(cin,a[i].name);
+        int x=0;
+        for(int j=0;j<a[i].name.length();++j)
+            if((a[i].name[j]>='0')&&(a[i].name[j]<='9'))x=x*10+a[i].name[j]-'0';
+        a[i].year=x;
+        a[i].name.erase(a[i].name.size()-5,5);
+    }
+    sort(a+1,a+n+1,cmp);
+    for(int i=1;i<=n;++i)
+        if(a[i].year!=a[i-1].year)
+            cout<<a[i].year<<" "<<a[i].name<<endl;
+}

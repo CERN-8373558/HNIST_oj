@@ -1,0 +1,22 @@
+#include<stdio.h>
+
+int main()
+{
+	char ch = 0;
+	int i = 0;
+	int j = 0;
+	int num = 0;
+	scanf("%c", &ch);
+	num = ch - 'A';
+	for (i = 0; i <= num; i++)
+	{
+		for (j = 0; j < i; j++)
+			printf(" ");
+		for (j = i; j <= num; j++)
+			printf("%c", ch - j);
+		for (j = 0; j < num - i; j++)
+			printf("%c", 'A' + j);
+		printf("\n");
+	}
+	return 0;
+}

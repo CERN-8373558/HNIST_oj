@@ -1,0 +1,32 @@
+#include <stdio.h>
+int main()
+{
+  int N;
+  int i=0;
+  int j=0;
+  scanf("%d",&N);
+  int a[25][25]={0};
+  for(i=0;i<N;i++)
+  {
+    for(j=0;j<N;j++)
+    {
+      scanf("%d ",&a[i][j]);
+    }
+  }
+  int min[N];
+  int sum=0;
+  for(i=0;i<N;i++)
+  {
+    min[i]=a[i][0];
+    for(j=0;j<N;j++)
+    {
+      if(min[i]>a[i][j])
+      {
+        min[i]=a[i][j];
+      }
+    }
+    sum=sum+min[i];
+  }
+  printf("%d",sum);
+  return 0;
+}

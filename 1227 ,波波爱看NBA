@@ -1,0 +1,114 @@
+#include <stdio.h>
+#include <string.h>
+struct cern
+{
+  char name[20];
+  int year;
+};
+int main()
+{
+  int n;
+  int i=0;
+  int j=0;
+  int k;
+  scanf("%d",&n);
+  struct cern p[n],temp;
+  for(i=0;i<n;i++)
+  {
+    scanf("%s ",&p[i].name);
+	scanf("%d",&p[i].year); 
+  }
+  for(i=0;i<n-1;i++)
+  {
+  	k=i;
+  	for(j=i+1;j<n;j++)
+  	{
+  		if(p[j].year>p[k].year)
+  		{
+  			k=j;
+	    }
+	}
+	      strcpy(temp.name,p[i].name);temp.year=p[i].year;
+	      strcpy(p[i].name,p[k].name);p[i].year=p[k].year;
+	      strcpy(p[k].name,temp.name);p[k].year=temp.year;
+  }
+  for(i=n-1;i>=0;i--)
+  {
+  	printf("%d %s\n",p[i].year,p[i].name);
+  }
+  return 0;
+}
+  //疯了oj
+#include<iostream>
+#include<string>
+#include<cmath>
+#include<algorithm>
+using namespace std;
+typedef struct nba			//定义结构体来存储信息
+{
+	string str;
+	int year;
+}NBA;
+bool cmp(NBA& x, NBA& y)		
+{
+	return x.year < y.year;
+}
+int main()
+{
+	int n;
+	while (scanf("%d", &n) != EOF)
+	{
+		getchar();				//吸收输入n以后的那个回车
+		NBA arr[1000];
+		int i;
+		for (i = 0; i < n; i++)
+		{
+			getline(cin, arr[i].str);				//先将整体当作一个字符串输入
+			int j;
+			int temp = 0;
+			int index = 0;
+			
+			//将后四位的数字拿出来，转换成年份
+			for (j = arr[i].str.length() - 1; j >= arr[i].str.length() - 4; j--)
+			{
+				temp += (arr[i].str[j] - '0') * pow(10, index);
+				index++;
+			}
+			arr[i].year = temp;
+			//删除后四位数字
+			arr[i].str.erase(arr[i].str.size() - 4, 4);
+		}
+		int j;
+		i = 1;
+		int length = n;
+		while (i < length)
+		{
+			int flag = 1;		//标志变量，判断是否有重复内容
+			int index = i;
+			//找是否有重复输入
+			for (j = 0; j < i; j++)
+			{
+				if (arr[j].year == arr[i].year)
+				{
+					//将重复的内容覆盖掉，然后长度减1
+					for (index; index < length - 1; index++)
+					{
+						arr[index].str = arr[index + 1].str;
+						arr[index].year = arr[index + 1].year;
+						flag = 0;
+					}
+					length--;
+					break;
+				}
+			}
+			if (flag)  i++;
+		}
+
+		sort(arr, arr + length, cmp);		//排序
+		for (i = 0; i < length; i++)
+		{
+			cout << arr[i].year << " " << arr[i].str << endl;
+		}
+	}
+	return 0;
+}

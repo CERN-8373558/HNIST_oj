@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main()
+{
+    long long n;
+    scanf("%lld",&n);
+    int ans;
+	if(n < 300)
+		printf("%lld",n);
+	else if(n>=300&&n<500)
+		printf("%lld",n-120);
+	else
+        {
+            ans=n/500*240;
+            if(n%500>=300)
+                ans=n/500*240+n%500/300*120;
+            n=n-ans;
+            printf("%lld",n);
+        }
+        return 0;
+}

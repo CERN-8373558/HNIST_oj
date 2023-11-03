@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main()
+{
+  int n,m;
+  printf("Input 2 integers:\n");
+  int k;
+  scanf("%d%d",&n,&m);
+  k=n+m;
+  printf("%d+%d=%d",n,m,k);
+  return 0;
+}

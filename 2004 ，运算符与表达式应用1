@@ -1,0 +1,47 @@
+#include <stdio.h>
+int main()
+{
+ int a,b,c,d;
+  scanf("%d%d%d%d",&a,&b,&c,&d);
+  if(a==b)
+  {
+    printf("1\n");
+  }
+  else
+  {
+    printf("0\n");
+  }
+  if(a!=b)
+  {
+    printf("1\n");
+  }
+  else
+  {
+    printf("0\n");
+  }
+  if(a!=b&&c<d)
+  {
+    printf("1\n");
+  }
+  else
+  {
+    printf("0\n");
+  }
+  if(a==b&&a==c)
+  {
+    printf("1\n");
+  }
+  else
+  {
+    printf("0\n");
+  }
+  if(c%d!=2)
+  {
+    printf("1\n");
+  }
+  else
+  {
+    printf("0\n");
+  }
+  return 0;
+}

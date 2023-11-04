@@ -1,0 +1,9 @@
+#include <stdio.h>
+int main()
+{
+	int yyyy,mm,dd;
+	char i,j;
+	scanf("%d%c%d%c%d",&yyyy,&i,&mm,&j,&dd);
+	printf("%d--%02d--%02d",yyyy,mm,dd);
+	return 0;
+}

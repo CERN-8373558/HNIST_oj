@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int n = 0;
+	char str[20] = { 0 };
+	scanf("%d", &n);
+	int count = 0;
+	int i = 0;
+	for (i = 0; i < n; i++)
+	{
+		scanf("%s", str);
+		if (strstr(str, "@qq.com") != NULL)
+			printf("%s\n", str);
+		else
+			count++;
+	}
+	if (count == n)
+		printf("NO\n");
+	return 0;
+}

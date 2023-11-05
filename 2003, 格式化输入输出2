@@ -1,0 +1,10 @@
+#include <stdio.h>
+int main()
+{
+  int n;
+  char a[20];
+  float i;
+  scanf("%d %s %f",&n,&a,&i);
+  printf("%+d\n%s\n%+.2f",n,a,i);
+  return 0;
+}

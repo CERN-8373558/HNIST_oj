@@ -1,0 +1,44 @@
+#include<stdio.h>
+int main()
+{
+	int i = 0;
+	int j = 0;
+	int h = 0;
+	int l = 0;
+	char c = 0;
+	int n = 0;
+	scanf("%d %d %c %d", &h, &l, &c, &n);
+	if (n == 0)
+	{
+		for (i = 0; i < h; i++)
+		{
+			if (i == 0 || i == h - 1)
+			{
+				for (j = 0; j < l; j++)
+					printf("%c", c);
+				printf("\n");
+			}
+			else
+			{
+				printf("%c", c);
+				for (j = 1; j < l - 1; j++)
+				{
+					printf(" ");
+				}
+				printf("%c\n", c);
+			}
+		}
+	}
+	else
+	{
+		for (i = 0; i < h; i++)
+		{
+			for (j = 0; j < l; j++)
+			{
+				printf("%c", c);
+			}
+			printf("\n");
+		}
+	}
+	return 0;
+}

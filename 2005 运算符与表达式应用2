@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+void func(int a);
+int main()
+{
+  int n;
+  int temp;
+  char cern;
+  scanf("%c %d",&cern,&n);
+  int a1,a2;
+  if(isupper(cern)){cern=tolower(cern);printf("%c\n",cern);}
+  else if(islower(cern)){cern=toupper(cern);printf("%c\n",cern);}
+  func(n);
+  return 0;
+}
+void func(int a)
+{
+	if (a > 9)
+		func(a / 10);
+	printf("%d\n", a % 10);
+}

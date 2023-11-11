@@ -1,0 +1,32 @@
+#include<stdio.h>
+typedef struct//结构体声明
+{
+    char name[10];
+    int age,score;
+}stu;
+void train(stu *p,int n)//结构体用指针传给函数
+{
+    int i;
+    for(i=0;i<n;i++)
+    {
+        p[i].age+=1;
+        p[i].score=(int)(p[i].score*1.2);
+        if(p[i].score>600)
+            p[i].score=600;
+    }
+}
+int main()
+{
+    int n,i;
+    scanf("%d",&n);
+    stu s[n];
+    for(i=0;i<n;i++)
+    {
+        scanf("%s %d %d",s[i].name,&s[i].age,&s[i].score);
+    }
+    train(s,n);//函数使用
+    for(i=0;i<n;i++)
+    {
+        printf("%s %d %d\n",s[i].name,s[i].age,s[i].score);
+    }
+}

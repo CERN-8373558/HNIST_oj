@@ -1,0 +1,35 @@
+#include <stdio.h>
+int main()
+{
+  int o;
+  scanf("%d",&o);
+   if(o==1)
+  {
+    printf("Monday");
+  }
+  else if(o==2)
+  {
+    printf("Tuesday");
+  }
+  else if(o==3)
+  {
+    printf("Wednesday");
+  }
+  else if(o==4)
+  {
+    printf("Thursday");
+  }
+  else if(o==5)
+  {
+    printf("Friday");
+  }
+  else if(o==6)
+  {
+    printf("Saturday");
+  }
+  else if(o==7)
+  {
+    printf("Sunday");
+  }
+  return 0;
+}

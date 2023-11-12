@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main()
+{
+  int a0,a1,a2;
+  scanf("%d%d%d",&a0,&a1,&a2);
+  int i=0;
+  int arr[100];
+  arr[0]=a0;
+  arr[1]=a1;
+  arr[2]=a2;
+  for(i=3;i<=20;i++)
+  {
+    arr[i]=arr[i-3]+2*arr[i-2]+arr[i-1];
+  }
+  for(i=0;i<=20;i++)
+  {
+    printf("%d ",arr[i]);
+  }
+  return 0;
+}

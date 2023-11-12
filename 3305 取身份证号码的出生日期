@@ -1,0 +1,12 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+int main()
+{
+	char str[19] = { 0 };
+	char* des = (char*)calloc(9, sizeof(char));
+	scanf("%s", str);
+	strncpy(des, str + 6, 8);
+	printf(des);
+	return 0;
+}

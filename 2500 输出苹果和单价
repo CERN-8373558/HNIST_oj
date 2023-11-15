@@ -1,0 +1,7 @@
+#include <stdio.h>
+int main()
+{
+  printf("apple\n");
+  printf("15");
+  return 0;
+}

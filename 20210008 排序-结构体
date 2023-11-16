@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <string.h>
+struct cern
+{
+  char num[50];
+  char name[20];
+  int score;
+};
+int main()
+{
+  int n;
+  scanf("%d",&n);
+  struct cern p[n],temp;
+  int i=0;
+  int o=0;
+  for(i=0;i<n;i++)
+  {
+    scanf("%s",&p[i].num);
+    scanf("%s",&p[i].name);
+    scanf("%d",&p[i].score);
+  }
+  int j=0;
+  int k;
+  for(i=0;i<n-1;i++)
+  {
+    k=i;
+    for(j=i+1;j<n;j++)
+    {
+      if(p[j].score>p[k].score)
+      {
+        k=j;
+      }
+    }
+    temp.score=p[i].score;p[i].score=p[k].score;p[k].score=temp.score;
+    strcpy(temp.num,p[i].num);strcpy(p[i].num,p[k].num);strcpy(p[k].num,temp.num);
+    strcpy(temp.name,p[i].name);strcpy(p[i].name,p[k].name);strcpy(p[k].name,temp.name);
+  }
+ // for(o=0;o<2;o++)
+  //{
+   for(i=0;i<n;i++)
+   {
+   	 for(j=i+1;j<n-1;j++)
+  	 {
+  		if(p[i].score==p[j].score)
+		{
+			if(strcmp(p[i].num,p[j].num)==1)
+			{
+				temp.score=p[i].score;p[i].score=p[j].score;p[j].score=temp.score;
+				strcpy(temp.num,p[i].num);strcpy(p[i].num,p[j].num);strcpy(p[j].num,temp.num);
+				strcpy(temp.name,p[i].name);strcpy(p[i].name,p[j].name);strcpy(p[j].name,temp.name);
+			}  	
+		}	
+	 } 
+   }
+  //}
+  for(i=n-1;i>=0;i--)
+  {
+    printf("%s %s %d\n",p[i].num,p[i].name,p[i].score);
+  }
+  return 0;
+}

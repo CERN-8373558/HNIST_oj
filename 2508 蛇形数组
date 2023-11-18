@@ -1,0 +1,135 @@
+#include <stdio.h>
+int sum;
+int arr[100][100];
+int n;//维度
+int quan=1;//圈数
+int x,y;//最初的起始坐标
+int t,z;//用来记录坐标
+void xia();
+void zuo();
+void shang();
+void you();
+int main()
+{
+  scanf("%d",&n);
+  sum=n*n;
+  int m;
+  m=n%2;
+  if(n<=25&&m!=0)
+  {
+    x=n-1;y=n-1;
+    t=x;z=y;
+   int cern;
+    cern=n*2;
+    int flag=1;
+    for(cern;cern>0;cern--)
+    {
+      if(flag==1)
+      {
+       xia();
+        flag++;
+      }
+      else if(flag==2)
+      {
+       zuo();
+        flag++;
+      }
+      else if(flag==3)
+      {
+       shang();
+        flag++;
+      }
+      else if(flag==4)
+      {
+       you();
+        flag=1;
+      }
+    }
+    for(int i=0;i<n;i++)
+    {
+    	for(int j=0;j<n;j++)
+    	{
+    		printf("%-4d",arr[i][j]);
+		}
+		printf("\n");
+	}
+    return 0;
+  }
+  else
+  {
+    return 0;
+  }
+}
+void xia()
+{
+  int x1,y1;//起点坐标
+  int x2,y2;//终点坐标
+  x1=t;y1=z;
+  int i=t;
+  int j=z;
+  int qq;
+  for(j=z;j>=quan-1;j--)
+  {
+    arr[i][j]=sum;
+   // printf("%d",arr[i][j]);
+    sum--;
+    qq=j;
+  }
+  sum+=1;
+  z=qq;
+}
+void zuo()
+{
+  int x1,y1;//起点坐标
+  int x2,y2;//终点坐标
+  x1=t;y1=z;
+  int i=t;
+  int j=z;
+  int qq;
+  for(i=t;i>=quan-1;i--)
+  {
+    arr[i][j]=sum;
+    //printf("%d",arr[i][j]);
+    sum--;
+    qq=i;
+  }
+  sum+=1;
+  t=qq;
+}
+void shang()
+{
+  int x1,y1;//起点坐标
+  int x2,y2;//终点坐标
+  x1=t;y1=z;
+  int i=t;
+  int j=z;
+  int qq;
+  for(j=z;j<=n-quan;j++)
+  {
+    arr[i][j]=sum;
+    //printf("%d",arr[i][j]);
+    sum--;
+    qq=j;
+  }
+  sum+=1;
+  z=qq;
+}
+void you()
+{
+  int x1,y1;//起点坐标
+  int x2,y2;//终点坐标
+  x1=t;y1=z;
+  int i=t;
+  int j=z;
+  int qq;
+  for(i=t;i<n-quan;i++)
+  {
+    arr[i][j]=sum;
+    //printf("%d",arr[i][j]);
+    sum--;
+    qq=i;
+  }
+  sum+=1;
+  t=qq;
+  quan++;
+}

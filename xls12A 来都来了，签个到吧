@@ -1,0 +1,6 @@
+#include <stdio.h>
+int main()
+{
+  printf("You are right, but Da Ren did not come to the HNIST Acm Training Match at 19:00 on August 16, 2023.");
+  return 0;
+}

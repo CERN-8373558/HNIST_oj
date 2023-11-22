@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+struct cern
+{
+  char num[50];
+};
+int main()
+{
+  struct cern p[10],temp;
+  int i=0;
+  for(i=0;i<10;i++)
+  {
+    scanf("%s",p[i].num);
+  }
+  int j=0;
+  for(i=0;i<10-1;i++)
+  {
+    for(j=0;j<10-i-1;j++)
+    {
+      if(strcmp(p[j].num,p[j+1].num)>0)
+      {
+        strcpy(temp.num,p[j].num);
+        strcpy(p[j].num,p[j+1].num);
+        strcpy(p[j+1].num,temp.num);
+      }
+    }
+  }
+  for(i=0;i<10;i++)
+  {
+    printf("%s ",p[i].num);
+  }
+  return 0;
+}

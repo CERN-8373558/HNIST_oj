@@ -1,0 +1,56 @@
+#include<stdio.h>
+#define ROW 5
+#define COL 5
+
+int sum(int arr[][COL], int row, int col) {
+    int s = 0;
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            s += *(*(arr + i) + j);
+        }
+    }
+    return s;
+}
+int max(int arr[][COL], int row, int col) {
+    int m = **arr;
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            if (*(*(arr + i) + j) > m) {
+                m = *(*(arr + i) + j);
+            }
+        }
+    }
+    return m;
+}
+int min(int arr[][COL], int row, int col) {
+    int m = **arr;
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            if (*(*(arr + i) + j) < m) {
+                m = *(*(arr + i) + j);
+            }
+        }
+    }
+    return m;
+}
+int main() {
+
+    int arr[ROW][COL];
+    int i,j;
+    for(i=0;i<ROW;i++)
+    {
+    	for(j=0;j<COL;j++)
+    	{
+    		scanf("%d",&arr[i][j]);
+		}
+	}
+    int s = sum(arr, ROW, COL);
+    printf("sum=%d\n", s);
+    int m = max(arr, ROW, COL);
+    printf("max=%d\n", m);
+    printf("max=%d,", m);
+    int n = min(arr, ROW, COL);
+    printf("min=%d\n", n);
+
+    return 0;
+}

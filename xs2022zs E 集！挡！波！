@@ -1,0 +1,28 @@
+#include <stdio.h>
+int main()
+{
+    int n;
+    const int N=1003;
+    char s[N];
+    scanf("%d",&n);
+    scanf("%s",s+1);
+    int flag=0;
+    for(int i=1;i<=n;i++)
+    {
+        if((s[i]=='J'||s[i]=='D')&&flag==0)
+        {
+          flag=1;
+        }
+        else if(s[i]=='J'&&flag==1)
+        {
+            puts("win");
+            return 0;
+        }
+        else if(s[i]=='B'&&flag==0)
+        {
+        	puts("lose");
+        	return 0;
+		}
+    }
+    puts("draw");
+}

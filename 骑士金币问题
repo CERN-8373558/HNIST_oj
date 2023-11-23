@@ -1,0 +1,22 @@
+int main()
+{
+    int k;
+    int i = 1;
+    int result = 0;
+    scanf("%d", &k);
+    while (k > 0)
+    {
+        if (k >= i) 
+            result += i * i;
+        else
+            result += k * i;
+        k -= i;      //天数在不断的减少
+        i++;         //完成 一行后 金币数需要加1
+    }
+    printf("%d\n", result);
+    return 0;
+}
+ 
+//k > = i  表示当天数大于等于项数时，可以走完一行，所以使用 i * i ，行数(金币数) × 项数 
+ 
+//k < i 表示当天数小于项数时，则要求该项所在的行数(金币数) * 天数 得到剩余天数的所有金币

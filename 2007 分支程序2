@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int a, b, c;
+    double disc, p, q, x1, x2;
+    scanf("%d %d %d", &a, &b, &c);
+    if (a == 0) {
+        printf("x=%.2f", -1.0 * c / b);
+    } else {
+        disc = b * b - 4 * a * c;
+        if (disc >= 0) {
+            p = -1.0 * b / (2 * a);
+            q = sqrt(disc) / (2 * a);
+            x1 = p + q;
+            x2 = p - q;            printf("x1=%.2f\nx2=%.2f", x1, x2);
+        } else {
+            p = -1.0 * b / (2 * a);
+            q = sqrt(-1.0 * disc) / (2 * a);
+            printf("x1=%.2f+%.2fj\nx2=%.2f-%.2fj", p, q, p, q);
+        }
+    }
+    return 0;
+}

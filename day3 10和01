@@ -1,0 +1,110 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+//const int N=1000006;
+struct cern
+{
+  int sum;
+  char arr[];//每个子串 
+};
+int main()
+{
+	long long  n;
+	scanf("%d",&n);
+    getchar();
+	char s[n];
+	gets(s); 
+	long long count=0;
+	int i=0;
+	int j=0;
+	for(i=0;s[i]!='\0';i++)//如果字符串本身有11，则直接输出0 
+	{
+		if(s[i]==s[i+1]&&s[i]=='1')
+		{
+			printf("0");
+			return 0;
+		}
+	}
+	struct cern p[100],temp;
+	const char *delimiters = "1";//以1为点，来截断字符串获得子串000 
+	char *token = strtok(s, delimiters);
+	while (token != NULL)
+	{
+        strcpy(p[count].arr,token);
+        token = strtok(NULL, delimiters);// 注意传递NULL来获取下一个子串
+        count++;
+    }
+    for(i=0;i<count;i++)
+    {
+        p[i].sum=strlen(p[i].arr);
+    }//得到每两个1之间的长度 
+    if(s[0]=='0')
+    {
+     for(i=0;i<count-1;i++)
+     {
+     	p[i].sum=p[i+1].sum;
+ 	 }//去掉第一个 
+	}
+	for(i=0;i<count-1;i++)
+  {
+  	for(j=0;j<count-i-1;j++)
+  	{
+  		if(p[j].sum>p[j+1].sum)
+  		{
+  			temp.sum=p[j].sum;
+  			p[j].sum=p[j+1].sum;
+  			p[j+1].sum=temp.sum;  			
+		}//冒泡排序 
+	}
+  }
+  printf("%d",p[0].sum);//输出最少的那个 
+  return 0;  
+}
+
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int main(void)
+{
+	//输入字符串的长度
+	long long n;
+	scanf("%lld", &n);
+	//创建字符串
+	char* s = (char*)malloc(n * sizeof(char));
+	//冲掉scanf()函数最后的空格
+	getchar();
+	//逐个读取字符
+	gets(s);
+	//初始化两个1之间的0数量为n(比任意两个‘1’的距离都大)
+	long long different = n;
+	//初始化第一个‘1’和第二个‘1’为‘0’
+	char first = '0', end = '0';
+	long long flag_first, flag_end;
+	//从头遍历字符串寻找‘1’
+	for (int i = 0; i < n; i++)
+	{
+		if (s[i] == '1' && first == '0')
+		{
+			//如果找到了第一个‘1’，变更first为‘1’，并记录该处‘1’的下标
+			first = '1';
+			flag_first = i;
+		}
+		else if (s[i] == '1' && first == '1')
+		{
+			////如果找到了第二个‘1’，变更end为‘1’，并记录该处‘1’的下标
+			end = '1';
+			flag_end = i;
+			//计算两个‘1’中‘0’的个数（将两个‘1’移动到一起所需的次数）
+			//如果结果比different小，刷新different的值，否则different的值不变
+			different = different < (flag_end - flag_first - 1) ? different : (flag_end - flag_first - 1);
+			//将first和end重新变更为‘0’
+			first = '0';
+			end = '0';
+			//返回将旧的第二个‘1’记录为新的第一个‘1’
+			i--;
+		}
+	}
+	printf("%lld", different);
+	return 0;
+}

@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+struct cern
+{
+  int num;
+  float c1;
+  float c2;
+  float c3;
+  float Ave;
+};
+
+int main()
+{
+	struct cern p[5],temp;
+	int i=0;
+	for(i=0;i<5;i++)
+	{
+		scanf("%d",&p[i].num);
+		scanf("%f",&p[i].c1);
+		scanf("%f",&p[i].c2);
+		scanf("%f",&p[i].c3);
+		p[i].Ave=(p[i].c1+p[i].c2+p[i].c3)/3;
+	}
+	int j=0;
+	for(i=0;i<4;i++)
+	{
+		for(j=0;j<4-i;j++)
+		{
+			if(p[j].Ave<p[j+1].Ave)
+			{
+				temp.num=p[j].num;p[j].num=p[j+1].num;p[j+1].num=temp.num;
+				temp.c1=p[j].c1;p[j].c1=p[j+1].c1;p[j+1].c1=temp.c1;
+				temp.c2=p[j].c2;p[j].c2=p[j+1].c2;p[j+1].c2=temp.c2;
+				temp.c3=p[j].c3;p[j].c3=p[j+1].c3;p[j+1].c3=temp.c3;
+				temp.Ave=p[j].Ave;p[j].Ave=p[j+1].Ave;p[j+1].Ave=temp.Ave;
+			}
+		}
+	}
+	printf("Num     C1      C2      C3      Ave\n");
+	for(i=0;i<5;i++)
+	{
+		printf("%-d       %-.2f   %-.2f   %-.2f   %-.2f\n",p[i].num,p[i].c1,p[i].c2,p[i].c3,p[i].Ave);
+	}
+}

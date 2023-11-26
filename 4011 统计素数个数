@@ -1,0 +1,34 @@
+#include <math.h>
+int sum=0;
+void cern (int n);
+
+int main()
+{
+  int L,R;
+  scanf("%d%d",&L,&R);
+  int i;
+  for(i=L;i<=R;i++)
+  {
+    cern(i);
+  }
+  printf("%d",sum);
+}
+void cern (int n)
+{
+  int i;
+  if (n == 0 || n == 1)
+	{
+		return;
+	}
+	for (i = 2; i <= sqrt(n); i++)
+	{
+		if (n % i == 0)
+		{
+			break;
+		}
+	}
+  if (i > sqrt(n))
+  {
+    sum++;
+  }
+}

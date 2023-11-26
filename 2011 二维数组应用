@@ -1,0 +1,43 @@
+#include <stdio.h>
+int main()
+{
+  int a,b;
+  scanf("%d%d",&a,&b);
+  int ma[4][3];
+  int mb[3][5];
+  int i=0;
+  int j=0;
+  for(i=0;i<4;i++)
+  {
+    for(j=0;j<3;j++)
+    {
+      ma[i][j]=a+i+j;
+    }
+  }
+  for(i=0;i<3;i++)
+  {
+    for(j=0;j<5;j++)
+    {
+      mb[i][j]=b+i+j;
+    }
+  }
+  int mc[4][5];
+  for (i = 0; i < 4; i++)
+	{
+		for (j = 0; j < 5; j++)
+		{
+			mc[i][j] = 0;
+			for (int k = 0; k < 3; k++)
+				mc[i][j] += ma[i][k] * mb[k][j];
+		}
+	}
+  for(i=0;i<4;i++)
+  {
+    for(j=0;j<5;j++)
+    {
+      printf("%-4d ",mc[i][j]);
+    }
+    printf("\n");
+  }
+ return 0;
+}

@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main()
+{
+  int n;
+  scanf("%d",&n);
+  int temp=n%2;
+  if(temp!=0)
+  {
+    printf("pika pika!");
+  }
+  else
+  {
+    printf("zhe jiu shi da ren!");
+  }
+  return 0;
+}

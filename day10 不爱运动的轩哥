@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+#define x first
+#define y second
+
+struct cern{
+    int x;
+    int y;
+};
+
+const int N = 100010;
+
+
+int main(){
+    
+	int n;
+	struct cern q[N];
+    scanf("%d", &n);
+    
+    for(int i = 0; i < n; i++) scanf("%d%d", &q[i].x, &q[i].y);
+    
+    int sum = 0;
+    for(int i = 1; i < n; i++)
+        sum += abs(q[i].x-q[i-1].x)+abs(q[i].y-q[i-1].y);
+        
+    int res = 2000000000;
+    for(int i = 1; i < n - 1; i++){
+        
+        int d1 = abs(q[i].x-q[i-1].x)+abs(q[i].y-q[i-1].y);
+        int d2 = abs(q[i].x-q[i+1].x)+abs(q[i].y-q[i+1].y);
+        int d3 = abs(q[i+1].x-q[i-1].x)+abs(q[i+1].y-q[i-1].y);
+        
+        int dist = sum - d1 - d2 + d3;
+        res = res < dist ? res : dist;
+    }
+    
+    printf("%d\n", res);
+    
+    return 0;
+}

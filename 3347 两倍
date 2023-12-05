@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main() {
+   int nums[15];
+   int i, j, count;
+
+   while (1) {
+       // 读入数据
+       i = 0;
+       while (1) {
+           scanf("%d", &nums[i]);
+           if (nums[i] == 0) {
+               break;
+           }
+           i++;
+       }
+       if (i == 0) {
+           break;
+       }
+
+       // 计算满足条件的数对数量
+       count = 0;
+       for (i = 0; i < 15; i++) {
+           if (nums[i] == 0) {
+               continue;
+           }
+           for (j = i + 1; j < 15; j++) {
+               if (nums[j] == 0) {
+                   continue;
+               }
+               if (nums[i] * 2 == nums[j] || nums[j] * 2 == nums[i]) {
+                   count++;
+               }
+           }
+       }
+
+       // 输出结果
+       printf("%d\n", count);
+     break;
+   }
+
+   return 0;
+}

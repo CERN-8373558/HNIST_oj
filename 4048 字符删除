@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+
+void remove_char(char str[], char ch) {
+   int i, j;
+   for (i = 0, j = 0; str[i] != '\0'; i++) {
+       if (str[i] != ch) {
+           str[j++] = str[i];
+       }
+   }
+   str[j] = '\0';
+}
+
+int main() {
+   char str[21];
+   char ch;
+   fgets(str, sizeof(str), stdin);
+   str[strcspn(str, "\n")] = '\0';
+   scanf(" %c", &ch);
+   remove_char(str, ch);
+   printf("%s\n", str);
+   return 0;
+}
+

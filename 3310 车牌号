@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+struct cern {
+   char num[100];
+};
+
+int main() {
+   int n;
+   scanf("%d", &n);
+   struct cern p[n];
+   for (int i = 0; i < n; i++) {
+       scanf("%s", p[i].num);
+   }
+   int count = 0;
+   for (int i = 0; i < n; i++) {
+       if (p[i].num[0] != 'A' && p[i].num[0] != 'B' && p[i].num[0] != 'C' && p[i].num[0] != 'D' && p[i].num[0] != 'E' && p[i].num[0] != 'F' && p[i].num[0] != 'G' && p[i].num[0] != 'R' && p[i].num[0] != 'S' && p[i].num[0] != 'T') {
+           count++;
+       }
+   }
+   printf("%d", count);
+   return 0;
+}

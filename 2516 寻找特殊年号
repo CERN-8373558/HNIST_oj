@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int cern(int n) {
+  int sum = 0;
+  int a, b, c, d;
+  a = n / 1000;
+  b = (n - a * 1000) / 100;
+  c = (n - a * 1000 - b * 100) / 10;
+  d = n - a * 1000 - b * 100 - c *10;
+  sum = a + b + c + d;
+  return sum;
+}
+//void cern1(int n)
+//{
+//	int sum = 0;
+//  int a, b, c, d;
+//  a = n / 1000;
+//  b = (n - a * 1000) / 100;
+//  c = (n - a * 1000 - b * 100) / 10;
+//  d = n - a * 1000 - b * 100 - c*10;
+//  sum = a + b + c + d;
+//  printf("%d %d %d %d %d\n",a,b,c,d,sum);
+//}
+
+int main() {
+  int y;
+  scanf("%d", &y);
+  int i = y +1;
+  while (1) {
+//  	cern1(i);
+      if (cern(i) == 20)
+	   {
+          printf("%d", i);
+          break;
+      }
+      i++;
+  }
+  return 0;
+}

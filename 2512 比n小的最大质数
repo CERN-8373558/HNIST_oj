@@ -1,0 +1,23 @@
+#include<math.h>
+#include<stdio.h>
+int main()
+{
+	int n = 0;
+	int i = 0;
+	int j = 0;
+	scanf("%d", &n);
+	for (i = n - 1; i > 1; i--)
+	{
+		for (j = 2; j <= sqrt(i); j++)
+		{
+			if (i % j == 0)
+				break;
+		}
+		if (j > sqrt(i))
+		{
+			printf("%d", i);
+			break;
+		}
+	}
+	return 0;
+}

@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+int jiou(int n)
+{
+  int j;
+  j=n%2;
+  if(j==0)
+  {
+    return 1;
+  }
+  else
+  {
+    return 0;
+  }
+}
+
+int main()
+{
+  int n;
+  scanf("%d",&n);
+  int count=0;
+  int oi;
+  oi=jiou(n);
+  if(oi==1||n==0)
+  {
+    printf("0");
+  }
+  else if(oi==0)
+  {
+    while(1)
+    {
+      count++;
+      int pp;
+      n=n/10;
+      pp=jiou(n);
+      if(pp==1)
+      {
+        break;
+      }
+    }
+    printf("%d",count);
+  }
+ return 0; 
+}

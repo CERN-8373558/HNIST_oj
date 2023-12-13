@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+int main()
+{
+  char arr[100];
+  scanf("%s",&arr);
+  int n;
+  n=strlen(arr);
+  int count = 0;
+  char num[100];
+  int sum=0; 
+  int i=0;
+  for(i=0;i<n;i++)
+  {
+    if(arr[i]>='0'&&arr[i]<='9')
+    {
+      num[count]=arr[i];
+      sum+=num[count]-'0';
+      count++;
+    }
+  }
+  printf("%d",sum);
+}

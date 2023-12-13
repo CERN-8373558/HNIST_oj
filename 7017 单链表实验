@@ -1,0 +1,149 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct cern {
+    char data;
+    struct cern *next;
+} cern;
+
+void brintf(cern *L);
+cern *init(cern *L);
+cern *creat(int len);
+int getlen(cern *L);
+int isEmpty(cern *L);
+int search(cern *L, char e);
+int insert(cern *L, int pos, char e);
+int del(cern *L, int pos, char *e);
+
+int main() {
+    cern *L;
+    int len; //被插入的元素个数
+    int pos; //插入位置
+    char e; //插入字符
+
+    scanf("%d", &len);
+    L = creat(len);
+    brintf(L);
+    printf("%d\n", getlen(L));
+
+    scanf("%d", &pos);
+    scanf(" %c", &e);
+    insert(L, pos, e); //插入
+
+    scanf("%d", &pos);
+    del(L, pos, &e);
+
+    scanf(" %c", &e);
+    if (search(L, e) != -1) {
+        printf("%d\n", search(L, e));
+    }
+
+    return 0;
+}
+
+cern *init(cern *L) //初始化，创建头节点
+{
+    L = (cern *) malloc(sizeof(cern));
+    L->next = NULL;
+    return L;
+}
+
+cern *creat(int len) //创建指定个数的单链表
+{
+    int i;
+    char e;
+    cern *L = init(L), *r, *n; //分别定义头指针，尾指针，新指针；
+    r = L; //尾指针初始化为头指针
+    for (i = 0; i < len; i++) {
+        n = (cern *) malloc(sizeof(cern));
+        scanf(" %c", &e);
+        n->data = e;
+        n->next = NULL; //新指针指针域置空
+        r->next = n; //将新指针链入单链表末尾
+        r = r->next; //尾指针往后移
+    }
+    return L;
+}
+
+void brintf(cern *L) //打印链表
+{
+    cern *p;
+    p = L->next;
+    while (p) {
+        printf("%c", p->data);
+        p = p->next;    }
+    printf("\n");
+}
+
+int getlen(cern *L) //得到链表长度
+{
+    if (L->next == NULL) return 0; //头指针指针域为空，说明单链表不含任何元素
+    int len = 0;
+    cern *r = L->next;
+    while (r) {
+        r = r->next; //尾指针后移
+        len++;
+    }
+    return len;
+}
+
+int del(cern *L, int pos, char *e) //指定位置元素删除；
+{
+    if (pos < 1 || pos > getlen(L)) {
+        printf("error\n");
+        return 0; //删除位置错误
+    }
+    cern *r = L, *d;
+    while (--pos > 0) {
+        r = r->next; //将尾指针移动到删除位置
+    }
+    d = r->next; //删除元素节点
+    *e = d->data; //保存删除元素值
+    r->next = d->next; //将尾指针跳过删除节点链入下一个节点
+    free(d); //释放删除节点
+    printf("succ\n");
+    return 1;
+}
+
+int isEmpty(cern *L)
+{
+    return !L->next; //L->next == NULL亦可
+}
+
+int search(cern *L, char e) ////查找指定元素，返回指定元素位序
+{
+    if (isEmpty(L)) {
+        printf("error\n");
+        return -1;
+    }
+    int pos = 1; //位序从1开始、下标从零开始
+    cern *r = L->next;
+    while (r) {
+        if (r->data == e) {
+            return pos; //找到指定元素，返回位序
+        }
+        r = r->next; //尾指针后移
+        pos++;
+    };
+    printf("error\n");
+    return -1;
+}
+
+int insert(cern *L, int pos, char e) //插入
+{
+    if (pos < 1 || pos > getlen(L) + 1) {
+        printf("error\n");
+        return -1; //插入位置错误
+    }
+    cern *r = L, *n;
+    n = (cern *) malloc(sizeof(cern));
+    n->data = e;
+    n->next = NULL;
+    while (--pos > 0) {
+        r = r->next; //将尾指针移动到插入位置
+    }
+    n->next = r->next; //先把新指针（插入值）链入尾指针后一个节点;
+    r->next = n; //再把新指针（插入值）链入尾指针之后
+    printf("succ\n");
+    return 1;
+}

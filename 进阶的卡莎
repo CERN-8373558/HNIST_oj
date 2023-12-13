@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int max(int a, int b)
+{
+	int max;
+	max=a;
+	if(b>a)
+	{
+		max=b;
+	}
+	return max;
+}
+
+int main() {
+    int N;
+    scanf("%d", &N);
+	int scores[N];
+    for (int i = 0; i < N; ++i) {
+        scanf("%d", &scores[i]);
+    }
+
+    int maxLength = 1; 
+    int currentLength = 1;
+
+    for (int i = 1; i < N; ++i) {
+        if (scores[i] > scores[i - 1]) {
+     
+            ++currentLength;
+            maxLength = max(maxLength, currentLength);
+        }
+        else {
+
+            currentLength = 1;
+        }
+    }
+
+    printf("%d\n", maxLength);
+
+    return 0;
+}

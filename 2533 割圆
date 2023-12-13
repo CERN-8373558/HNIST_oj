@@ -1,0 +1,35 @@
+#include <stdio.h>
+int n, m, f[1005];
+int main() {
+  int a, fs, ed, tj = 0;
+  scanf("%d %d", &n, &m);
+  for (int i = 1; i <= m; i++) {
+    scanf("%d", &a);
+    a = a % n;
+    if (i == 1) {
+      fs = a;
+      f[a] = 1;
+      tj++;
+      if (tj == n) {
+        ed = a;
+        break;
+      }
+      continue;
+    }
+    int lf = (a - 1 + n) % n;
+    int rt = (a + 1) % n;
+    if ((f[lf] == 1 || f[rt] == 1) && f[a] != 1) {
+      f[a] = 1;
+      tj++;
+      if (tj == n) {
+        ed = a;
+        break;
+      }
+    }
+  }
+  if (tj != n)
+    printf("No\n");
+  else
+    printf("%d %d\n", fs, ed);
+  return 0;
+}

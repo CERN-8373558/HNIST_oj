@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main()
+{
+  long long a,b;
+  scanf("%lld%lld",&a,&b);
+  int niu;
+  niu=a%b;
+  int averge;
+  averge=(a-niu)/b;
+  if(niu>averge)
+  {
+    printf("niuniu eats more than others");
+  }
+  else if(niu<averge)
+  {
+    printf("niuniu eats less than others");
+  }
+  else if(niu==averge)
+  {
+    printf("same");
+  }
+  return 0;
+}

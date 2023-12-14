@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+  int M;
+  scanf("%d",&M);
+  int i=1;
+  int S=0;
+  while(S<=M)
+  {
+    S+=i;
+    if(S>M)
+    {
+      break;
+    }
+    i++;
+  }
+  printf("%d",i-1);
+}
